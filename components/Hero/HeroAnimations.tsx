@@ -85,7 +85,6 @@ const HeroAnimations = () => {
           "-=0.35",
         );
     });
-    ScrollTrigger.refresh();
 
     return () => ctx.revert();
   }, []);
@@ -109,8 +108,6 @@ const HeroAnimations = () => {
         titleY: number;
         hintY: number;
       }) => {
-        if (!Number.isFinite(heroVideo.duration)) return;
-
         const scrollTl = gsap.timeline({
           scrollTrigger: {
             trigger: hero,
@@ -126,7 +123,13 @@ const HeroAnimations = () => {
         scrollTl
           .to(
             heroVideo,
-            { currentTime: heroVideo.duration - 0.1, ease: "none" },
+            {
+              currentTime: () =>
+                Number.isFinite(heroVideo.duration)
+                  ? heroVideo.duration - 0.1
+                  : 0,
+              ease: "none",
+            },
             0,
           )
           .to(heroOverlay, { opacity: 0.35, ease: "none" }, 0)
@@ -176,25 +179,22 @@ const HeroAnimations = () => {
         });
       };
 
-      let cleanupMatchMedia: (() => void) | undefined;
+      const cleanupMatchMedia = initScroll();
 
-      const onMetadataLoaded = () => {
-        cleanupMatchMedia = initScroll();
-        notifyScrollReady();
-      };
+      const onMetadataLoaded = () => notifyScrollReady();
 
-      if (heroVideo.readyState >= 1) {
-        cleanupMatchMedia = initScroll();
-        notifyScrollReady();
-      } else {
+      if (heroVideo.readyState < 1) {
         heroVideo.addEventListener("loadedmetadata", onMetadataLoaded, {
           once: true,
         });
       }
 
+      window.addEventListener("load", notifyScrollReady);
+
       return () => {
         heroVideo.removeEventListener("loadedmetadata", onMetadataLoaded);
-        cleanupMatchMedia?.();
+        window.removeEventListener("load", notifyScrollReady);
+        cleanupMatchMedia();
       };
     }, hero);
 
