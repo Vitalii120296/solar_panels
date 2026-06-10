@@ -4,7 +4,7 @@ import CaseStudiesAnimations from "./CaseStudiesAnimations";
 
 const CaseStudies = () => {
   return (
-    <section id="case-studies" className="section-wrap h-screen">
+    <section id="case-studies" className="section-wrap h-screen box-border">
       <div className="mx-auto mb-8 max-w-3xl shrink-0 px-4 text-center">
         <p className="section-eyebrow">Portfolio</p>
         <h2 className="section-title mt-3">Case Studies</h2>
@@ -17,7 +17,7 @@ const CaseStudies = () => {
       <div id="case-studies-stage" className="relative overflow-hidden">
         <div
           id="trackImgs"
-          className="relative flex h-full w-max gap-4 sm:gap-5 sm:px-6 md:gap-6"
+          className="relative flex h-full w-max gap-4 sm:gap-5 md:gap-6"
         >
           {CASE_STUDIES_IMAGES.map((image, index) => (
             <article
