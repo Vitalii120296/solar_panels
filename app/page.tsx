@@ -13,7 +13,9 @@ export default function Home() {
       <Hero />
       <div
         id="content"
-        className="mx-auto transition-colors duration-300 ease-in overflow-hidden border-t-5 border-l-5 border-r-5 border-transparent relative max-w-7xl rounded-t-3xl bg-background/45 shadow-[0_-32px_64px_rgba(0,0,0,0.12)] "
+        className="mx-auto transition-colors duration-300 overflow-x-hidden ease-in 
+        border-t-5 border-l-5 border-r-5 border-transparent relative max-w-7xl rounded-t-3xl bg-background/45 
+        shadow-[0_-32px_64px_rgba(0,0,0,0.12)] "
       >
         <div className="absolute -z-10 inset-0 backdrop-blur-md pointer-events-none" />
         <Accountability />
