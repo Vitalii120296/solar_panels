@@ -16,6 +16,7 @@ function Hero() {
       >
         <video
           id="hero-video"
+          autoPlay
           muted
           playsInline
           preload="auto"
