@@ -24,7 +24,7 @@ const CaseStudiesAnimations = () => {
           trigger: section,
           start: "top top",
           end: () => "+=" + getDistance(),
-          scrub: 0.5,
+          scrub: true,
           pin: true,
           invalidateOnRefresh: true,
         },
