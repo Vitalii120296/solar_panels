@@ -11,7 +11,7 @@ function Hero() {
     <>
       <div
         id="hero-background"
-        className="pointer-events-none fixed inset-0 -z-10 h-dvh w-full overflow-hidden"
+        className="pointer-events-none fixed inset-0 -z-10 h-lvh w-full overflow-hidden"
         aria-hidden="true"
       >
         <video
@@ -34,7 +34,7 @@ function Hero() {
 
       <section
         id="hero"
-        className="relative z-10 h-screen min-h-[640px]  overflow-hidden"
+        className="relative z-10 h-screen min-h-[640px] overflow-hidden"
       >
         <div className="relative flex h-screen flex-col justify-between gap-6 px-4 pb-8 pt-24 sm:px-6 sm:pb-10 sm:pt-28 md:gap-8 md:px-10 md:pb-12 md:pt-32 lg:px-16 lg:pb-14">
           <div
