@@ -17,8 +17,6 @@ const CaseStudiesAnimations = () => {
     const ctx = gsap.context(() => {
       const getDistance = () => track.scrollWidth - section.clientWidth;
 
-      console.log(getDistance(), "distance");
-
       gsap.to(track, {
         x: () => -getDistance(),
         ease: "none",
@@ -31,11 +29,21 @@ const CaseStudiesAnimations = () => {
           invalidateOnRefresh: true,
         },
       });
-
-      ScrollTrigger.refresh();
     }, section);
 
+    const images = Array.from(track.querySelectorAll("img"));
+    const refresh = () => ScrollTrigger.refresh();
+
+    images.forEach((img) => {
+      if (img.complete) return;
+      img.addEventListener("load", refresh, { once: true });
+    });
+
+    window.addEventListener("load", refresh);
+
     return () => {
+      window.removeEventListener("load", refresh);
+      images.forEach((img) => img.removeEventListener("load", refresh));
       ctx.revert();
     };
   }, []);
