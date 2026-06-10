@@ -19,8 +19,8 @@ type ThemeContextValue = {
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 function getInitialTheme(): Theme {
-  if (typeof window === "undefined") return "light";
-  return (localStorage.getItem("theme") as Theme) || "light";
+  if (typeof window === "undefined") return "dark";
+  return (localStorage.getItem("theme") as Theme) || "dark";
 }
 
 function applyTheme(theme: Theme) {
