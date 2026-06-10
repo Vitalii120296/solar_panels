@@ -10,12 +10,12 @@ const CaseStudiesAnimations = () => {
   useEffect(() => {
     const track = document.querySelector("#trackImgs");
     const section = document.querySelector("#case-studies");
-    // const stage = document.querySelector("#case-studies-stage");
+    const stage = document.querySelector("#case-studies-stage");
 
-    if (!track || !section) return;
+    if (!track || !section || !stage) return;
 
     const ctx = gsap.context(() => {
-      const getDistance = () => track.scrollWidth - section.clientWidth;
+      const getDistance = () => track.scrollWidth - stage.clientWidth;
 
       gsap.to(track, {
         x: () => -getDistance(),
@@ -24,7 +24,7 @@ const CaseStudiesAnimations = () => {
           trigger: section,
           start: "top top",
           end: () => "+=" + getDistance(),
-          scrub: 1.5,
+          scrub: 0.5,
           pin: true,
           invalidateOnRefresh: true,
         },
