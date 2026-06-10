@@ -11,7 +11,7 @@ function Hero() {
     <>
       <div
         id="hero-background"
-        className="pointer-events-none fixed inset-0 -z-10 h-dvh w-full overflow-hidden"
+        className="pointer-events-none fixed inset-0 -z-10 h-lvh w-full overflow-hidden"
         aria-hidden="true"
       >
         <video
