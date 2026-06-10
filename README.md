@@ -1,48 +1,37 @@
-# GSAP Store
+Overview
+A modern, conversion-focused marketing website built on Next.js 16 (App Router) and React 19, designed for utility-scale solar, wind, and infrastructure construction companies. The site combines enterprise-grade technology with cinematic, scroll-driven animation to communicate scale, reliability, and credibility to prospective clients and partners.
+Key Selling Points
 
-Лендінг-сайт на Next.js з анімаціями на основі GSAP та Framer Motion.
+1. SEO-Ready Out of the Box
 
-## Стек
+- Full Metadata API setup: dynamic page titles, descriptions, keywords, canonical URLs
+- Open Graph & Twitter Card tags for rich social-media previews
+- Auto-generated sitemap.xml and robots.txt for search engine crawling
+- Server-Side Rendering (Next.js App Router) ensures search engines receive fully-rendered HTML for faster indexing and better Core Web Vitals
 
-- [Next.js 16](https://nextjs.org)
-- [React 19](https://react.dev)
-- [GSAP](https://gsap.com) — анімації
-- [Framer Motion](https://www.framer.com/motion/)
-- [Tailwind CSS 4](https://tailwindcss.com)
-- [Radix UI](https://www.radix-ui.com) / shadcn — UI-компоненти
+2. Server-Side Rendering (SSR) for Better SEO & Performance
 
-## Структура
+- Built with Next.js's App Router, pages are rendered on the server before being sent to the browser — search engines receive fully-formed HTML content immediately, instead of an empty page that needs JavaScript to populate
+- Faster First Contentful Paint and better Core Web Vitals scores compared to client-side-only (SPA) sites
+- Improves indexing speed and ranking potential versus typical React SPA competitors
 
-```
-app/            # сторінки та глобальні стилі (App Router)
-components/     # секції сторінки (Hero, Health, Quality, CaseStudies, Footer тощо)
-components/ui/  # перевикористовувані UI-компоненти
-public/         # статичні файли
-```
+3. Premium Animation Experience
 
-## Запуск проєкту
+- GSAP + ScrollTrigger-powered scroll storytelling: video-scrubbing hero, horizontal Case Studies gallery, animated text reveals
+- Theme-aware (light/dark mode) with smooth transitions
 
-Встановити залежності:
+4. Complete Content Structure
 
-```bash
-npm install
-```
+- Hero, Accountability, Quality, Health & Safety, Operations & Maintenance, Testimonials, Case Studies, and Blog sections — covering the full sales funnel for B2B infrastructure clients
 
-Запустити сервер розробки:
+5. Modern, Maintainable Codebase
 
-```bash
-npm run dev
-```
-
-Відкрити [http://localhost:3000](http://localhost:3000) у браузері.
-
-## Скрипти
-
-- `npm run dev` — запуск у режимі розробки
-- `npm run build` — продакшн-збірка
-- `npm run start` — запуск продакшн-білду
-- `npm run lint` — лінтинг коду
-
-## Примітка
-
-Проєкт використовує Next.js 16 — деякі API можуть відрізнятись від звичних версій. Перед внесенням змін варто звірятись з документацією у `node_modules/next/dist/docs/`.
+- Tailwind CSS 4 for fast rebranding (colors, fonts, spacing)
+- Radix UI / shadcn accessible components
+- Modular component architecture — easy to reskin with new branding, copy, photography, and color palette
+- Fully responsive across mobile, tablet, and desktop
+  Why This Matters for the Client
+- Lower customer acquisition cost — better organic search visibility through SEO + SSR reduces reliance on paid ads
+- Higher conversion rates — premium animation and storytelling build trust and credibility for high-value B2B contracts
+- Lower long-term cost — modern, well-structured codebase is easy to maintain and extend without a full rebuild
+- Fast time-to-market — content sections and structure are ready; only branding, copy, and media need to be swapped
