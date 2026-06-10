@@ -85,7 +85,6 @@ const HeroAnimations = () => {
           "-=0.35",
         );
     });
-    ScrollTrigger.refresh();
 
     return () => ctx.revert();
   }, []);
@@ -192,8 +191,11 @@ const HeroAnimations = () => {
         });
       }
 
+      window.addEventListener("load", notifyScrollReady);
+
       return () => {
         heroVideo.removeEventListener("loadedmetadata", onMetadataLoaded);
+        window.removeEventListener("load", notifyScrollReady);
         cleanupMatchMedia?.();
       };
     }, hero);
