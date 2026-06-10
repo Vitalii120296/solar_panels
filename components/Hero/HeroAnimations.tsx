@@ -189,10 +189,21 @@ const HeroAnimations = () => {
         });
       }
 
+      const pauseOnFirstFrame = () => heroVideo.pause();
+
+      if (heroVideo.readyState >= 2) {
+        pauseOnFirstFrame();
+      } else {
+        heroVideo.addEventListener("loadeddata", pauseOnFirstFrame, {
+          once: true,
+        });
+      }
+
       window.addEventListener("load", notifyScrollReady);
 
       return () => {
         heroVideo.removeEventListener("loadedmetadata", onMetadataLoaded);
+        heroVideo.removeEventListener("loadeddata", pauseOnFirstFrame);
         window.removeEventListener("load", notifyScrollReady);
         cleanupMatchMedia();
       };

@@ -29,6 +29,7 @@ const CaseStudies = () => {
                 src={image.src}
                 alt={image.alt}
                 fill
+                preload
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/25 to-black/5 transition-opacity duration-500 group-hover:from-black/90" />
